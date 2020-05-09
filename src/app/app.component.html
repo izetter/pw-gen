@@ -2,22 +2,22 @@
 
 <div>
     <label>Enter Length:</label>
-    <input type="text">
+    <input type="text" (input)="onChangeLength($event.target.value)">
 </div>
 
 <div>
-    <label>Use letters</label>
-    <input type="checkbox">
+    <label>Include letters</label>
+    <input type="checkbox" (change)="onChangeIncludeLetters()">
 </div>
 
 <div>
-    <label>Use numbers</label>
-    <input type="checkbox">
+    <label>Include numbers</label>
+    <input type="checkbox" (change)="onChangeIncludeNumbers()">
 </div>
 
 <div>
-    <label>Use symbols</label>
-    <input type="checkbox">
+    <label>Include symbols</label>
+    <input type="checkbox" (change)="onChangeIncludeSymbols()">
 </div>
 
 <div>
@@ -26,7 +26,7 @@
 
 <div>
     <label>Your password:</label>
-    <input [value]="password">   <!-- Property Binding Syntax -->       <!-- You could instead do [value]="getPassword()" if you have that method defined in the TS file. This is just to show that with Property Binding Syntax we can not only call a class property, but also a method -->
+    <input type="text" [value]="password">   <!-- Property Binding Syntax -->       <!-- You could instead do [value]="getPassword()" if you have that method defined in the TS file. This is just to show that with Property Binding Syntax we can not only call a class property, but also a method -->
 </div>
 
 {{ password }}    <!-- Interpolation Syntax (the curly braces thing)... -->
