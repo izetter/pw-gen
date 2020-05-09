@@ -2,7 +2,7 @@
 
 <div>
     <label>Enter Length:</label>
-    <input type="text" (input)="onChangeLength($event.target.value)">
+    <input type="number" min="1" (input)="onChangeLength($event.target.value)">
 </div>
 
 <div>
@@ -21,13 +21,14 @@
 </div>
 
 <div>
-    <button (click)="onButtonClick()">Generate!</button>    <!-- Event Binding Syntax -->
+    <button (click)="onButtonClick()" [disabled]="!(this.passwordLength && (this.includeLetters || this.includeNumbers || this.includeSymbols))">Generate!</button>    <!-- Event Binding Syntax & Property Binding Syntax -->
 </div>
 
 <div>
     <label>Your password:</label>
-    <input type="text" [value]="password">   <!-- Property Binding Syntax -->       <!-- You could instead do [value]="getPassword()" if you have that method defined in the TS file. This is just to show that with Property Binding Syntax we can not only call a class property, but also a method -->
+    <input type="text" [value]="password">   <!-- Property Binding Syntax -->    <!-- The value keyword is an HTML attribute! -->     <!-- You could instead do [value]="getPassword()" if you have that method defined in the TS file. This is just to show that with Property Binding Syntax we can not only call a class property, but also a method -->
 </div>
 
 {{ password }}    <!-- Interpolation Syntax (the curly braces thing)... -->
-{{ getName() }}     <!-- ... with it, it's again possible to call class properties or methods. -->
+
+<!-- {{ getName() }} -->     <!-- ... with Interpolation Syntax it's again possible to call class properties or methods. -->
