@@ -1,4 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
 
 /* If you use @import it by default knows that paths are inside node_modules */
-@import 'bulma/css/bulma.css';
+@import 'bulma/css/bulma.min.css';
